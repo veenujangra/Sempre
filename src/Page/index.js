@@ -13,13 +13,11 @@ export default class Page {
   constructor(options) {
     this.element = options.element
     this.animationElement = {
-      title: '[data-animation = title]',
-      description: '[data-animation = description]',
-      slideUp: '[data-animation = slideup]',
-      image: '[data-animation = image]',
+      title: '[da = t]',
+      description: '[da = d]',
+      slideUp: '[da = s]',
+      image: '[da = i]',
       accordion: '[data-accordion = wrapper]',
-      metal: '[data-metal]',
-      heroAnimation: '[data-heroAnimation-wrapper]',
     }
   }
 
