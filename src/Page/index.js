@@ -41,8 +41,8 @@ export default class Page {
   createSmoothScroll() {
     this.lenis = new Lenis({
       lerp: 0.075,
-      smoothTouch: true,
-      syncTouchLerp: 0.075,
+      syncTouch: true,
+      // syncTouchLerp: 0.075,
     })
     this.update()
   }
