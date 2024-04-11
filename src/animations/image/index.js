@@ -7,7 +7,7 @@ export default class ImageAnimation extends Animation {
     this.element = element
 
     this.animationOptions = {
-      delay: this.element.getAttribute('data-delay') || 0,
+      delay: this.element.getAttribute('data-delay') || 0.3,
       stagger: this.element.getAttribute('data-stagger') || 0.2,
       ease: this.element.getAttribute('data-ease') || 'Power1.easeOut',
       duration: this.element.getAttribute('data-duration') || 1,

@@ -6,8 +6,6 @@ import SlideUp from '../animations/slideup'
 import Accordion from '../animations/accordion'
 import gsap from 'gsap'
 import Lenis from '@studio-freight/lenis'
-import Metal from '../animations/metal'
-import HeroAnimation from '../animations/heroAnimation'
 
 export default class Page {
   constructor(options) {
@@ -19,6 +17,7 @@ export default class Page {
       image: '[da = i]',
       accordion: '[data-accordion = wrapper]',
     }
+    this.createSmoothScroll()
   }
 
   create() {
@@ -35,6 +34,7 @@ export default class Page {
         }
       }
     })
+
     this.createAnimations()
   }
 
@@ -79,16 +79,6 @@ export default class Page {
       return new Accordion({ element })
     })
     this.animations.push([...this.animationAccordion])
-
-    this.animationMetal = map(this.elements.metal, (element) => {
-      return new Metal({ element })
-    })
-    this.animations.push([...this.animationMetal])
-
-    this.animationHeroMedia = map(this.elements.heroAnimation, (element) => {
-      return new HeroAnimation({ element })
-    })
-    this.animations.push([...this.animationHeroMedia])
   }
 
   show(animation) {
@@ -111,24 +101,30 @@ export default class Page {
         )
       }
       this.animateIn.call((_) => {
-        // this.createSmoothScroll()
-        // this.addEventListeners()
+        this.addEventListeners()
         resolve()
       })
     })
   }
 
   addEventListeners() {
-    // window.addEventListener('scroll', this.onScroll.bind(this))
+    window.addEventListener('scroll', this.onScroll.bind(this))
   }
 
   onScroll() {
+    const html = document.documentElement
+
+    if (Math.round(this.lenis.progress * 100) > 0 && !html.classList.contains('scrolled')) {
+      html.classList.add('scrolled')
+    } else if (Math.round(this.lenis.progress * 100) === 0 && html.classList.contains('scrolled')) {
+      html.classList.remove('scrolled')
+    }
     if (this.lenis.direction === -1) {
-      document.documentElement.classList.add('scroll-up')
-      document.documentElement.classList.remove('scroll-down')
+      html.classList.add('scroll-up')
+      html.classList.remove('scroll-down')
     } else if (this.lenis.direction === 1) {
-      document.documentElement.classList.remove('scroll-up')
-      document.documentElement.classList.add('scroll-down')
+      html.classList.remove('scroll-up')
+      html.classList.add('scroll-down')
     }
   }
 

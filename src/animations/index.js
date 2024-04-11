@@ -9,7 +9,7 @@ export default class Animation {
   createObserver() {
     this.observerOptions = {
       rootMargin: this.element.getAttribute('data-root-margin') || '0px 0px 0px 0px',
-      threshold: this.element.getAttribute('data-threshold') || 0,
+      threshold: this.element.getAttribute('dt') || 0,
     }
 
     this.observer = new IntersectionObserver((entries) => {
