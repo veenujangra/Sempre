@@ -42,34 +42,17 @@ export default class Description extends Animation {
       },
     })
 
-    this.text.chars.forEach((char) => {
-      this.tl.from(char, {
-        scrollTrigger: {
-          trigger: char,
-          start: 'top 80%',
-          end: 'top 20%',
-          scrub: 1,
-          // markers: 1,
-        },
-        opacity: 0.2,
-        stagger: 0.1,
-      })
+    this.tl.from(this.text.chars, {
+      scrollTrigger: {
+        trigger: this.element,
+        start: 'top 80%',
+        end: 'top 20%',
+        scrub: 1,
+        // markers: 1,
+      },
+      opacity: 0.2,
+      stagger: 0.1,
     })
-
-    // this.tl.to(
-    //   this.text.words,
-    //   // {
-    //   //   autoAlpha: 0,
-    //   //   y: 20,
-    //   // },
-    //   {
-    //     autoAlpha: 1,
-    //     y: 0,
-    //     ease: this.animationOptions.ease,
-    //     stagger: this.animationOptions.stagger,
-    //     duration: this.animationOptions.duration,
-    //   }
-    // )
   }
 
   animateOut() {}
