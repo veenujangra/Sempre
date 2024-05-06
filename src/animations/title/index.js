@@ -11,7 +11,7 @@ export default class Title extends Animation {
       delay: this.element.getAttribute('dd') || 0.0,
       stagger: this.element.getAttribute('data-stagger') || 0.1,
       ease: this.element.getAttribute('data-ease') || 'Power1.easeOut',
-      duration: this.element.getAttribute('data-duration') || 0.8,
+      duration: this.element.getAttribute('data-duration') || 0.4,
     }
 
     this.create()
@@ -33,7 +33,7 @@ export default class Title extends Animation {
   setProperties() {
     gsap.set(this.text.lines, {
       autoAlpha: 0,
-      y: '150%',
+      y: '120%',
     })
   }
 

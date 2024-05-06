@@ -115,3 +115,32 @@ html {
     top: 0%;
   }
 }
+
+// about page hero image
+.about_hero_media {
+  &:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: rgba(7, 7, 7, 0.6);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  .about_hero_media_content {
+    opacity: 0;
+    z-index: 1;
+    transition: opacity 0.4s ease;
+  }
+}
+
+.about_hero_media.is--scrolled {
+  &:before {
+    opacity: 1;
+  }
+  .about_hero_media_content {
+    opacity: 1;
+  }
+}

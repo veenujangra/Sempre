@@ -1,5 +1,7 @@
 import './style.scss'
 import Page from './src/Page'
+import About from './src/Page/about'
+import Product from './src/Page/product'
 
 class App {
   constructor(options) {
@@ -17,6 +19,17 @@ class App {
     this.page = new Page({
       element: this.element,
     })
+    // create about page
+    if (window.location.pathname === '/about-us') {
+      this.about = new About({
+        media: '.about_hero_media',
+        content: '.about_hero_media_content',
+      })
+    } else if (window.location.pathname === '/product') {
+      this.about = new Product({
+        media: '.product_hero_media',
+      })
+    }
 
     this.page.create()
     this.page.show()
