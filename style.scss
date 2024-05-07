@@ -144,3 +144,14 @@ html {
     opacity: 1;
   }
 }
+
+[data-accordion='header'] {
+  &[aria-expanded='true'] {
+    .accordion_question {
+      color: var(--black);
+    }
+    .accordion_header_media {
+      transform: rotateZ(45deg);
+    }
+  }
+}
