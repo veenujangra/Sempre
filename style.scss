@@ -151,7 +151,22 @@ html {
       color: var(--black);
     }
     .accordion_header_media {
-      transform: rotateZ(45deg);
+      img:first-child {
+        display: none;
+      }
+      img:last-child {
+        display: block;
+      }
+    }
+  }
+  &[aria-expanded='false'] {
+    .accordion_header_media {
+      img:first-child {
+        display: block;
+      }
+      img:last-child {
+        display: none;
+      }
     }
   }
 }
