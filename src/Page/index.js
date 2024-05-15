@@ -17,6 +17,7 @@ export default class Page {
       image: '[da = i]',
       accordion: '[data-accordion = wrapper]',
     }
+
     this.createSmoothScroll()
   }
 
@@ -41,7 +42,7 @@ export default class Page {
   createSmoothScroll() {
     this.lenis = new Lenis({
       lerp: 0.075,
-      syncTouch: true,
+      // syncTouch: true,
       // syncTouchLerp: 0.075,
     })
     this.update()
