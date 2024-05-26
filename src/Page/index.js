@@ -17,7 +17,11 @@ export default class Page {
       image: '[da = i]',
       accordion: '[data-accordion = wrapper]',
     }
-
+    if (window.innerWidth > 768) {
+      this.scrollLerp = 0.075
+    } else {
+      this.scrollLerp = 1
+    }
     this.createSmoothScroll()
   }
 
@@ -41,7 +45,7 @@ export default class Page {
 
   createSmoothScroll() {
     this.lenis = new Lenis({
-      lerp: 0.075,
+      lerp: this.scrollLerp,
       // syncTouch: true,
       // syncTouchLerp: 0.075,
     })
