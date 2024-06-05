@@ -25,6 +25,7 @@ class App {
         media: '.about_hero_media',
         content: '.about_hero_media_content',
       })
+      // create product pages
     } else if (window.location.pathname.indexOf('products')) {
       this.about = new Product({
         media: '.product_hero_media',
