@@ -19,8 +19,10 @@ export default class Page {
     }
     if (window.innerWidth > 768) {
       this.scrollLerp = 0.075
-      this.createSmoothScroll()
+    } else {
+      this.scrollLerp = 1
     }
+    this.createSmoothScroll()
   }
 
   create() {
@@ -117,12 +119,12 @@ export default class Page {
   onScroll() {
     const html = document.documentElement
 
-    if (this.lenis) {
-      if (Math.round(this.lenis.progress * 100) > 0 && !html.classList.contains('scrolled')) {
-        html.classList.add('scrolled')
-      } else if (Math.round(this.lenis.progress * 100) === 0 && html.classList.contains('scrolled')) {
-        html.classList.remove('scrolled')
-      }
+    if (Math.round(this.lenis.progress * 100) > 0 && !html.classList.contains('scrolled')) {
+      html.classList.add('scrolled')
+    } else if (Math.round(this.lenis.progress * 100) === 0 && html.classList.contains('scrolled')) {
+      html.classList.remove('scrolled')
+    }
+    if (window.innerWidth > 768) {
       if (this.lenis.direction === -1) {
         html.classList.add('scroll-up')
         html.classList.remove('scroll-down')
