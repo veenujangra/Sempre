@@ -17,12 +17,13 @@ export default class Page {
       image: '[da = i]',
       accordion: '[data-accordion = wrapper]',
     }
-    if (window.innerWidth > 768) {
-      this.scrollLerp = 0.075
-    } else {
-      this.scrollLerp = 1
-    }
+    this.scrollLerp = 0.075
     this.createSmoothScroll()
+    // if (window.innerWidth > 768) {
+
+    // } else {
+    //   this.scrollLerp = 1
+    // }
   }
 
   create() {
@@ -46,8 +47,8 @@ export default class Page {
   createSmoothScroll() {
     this.lenis = new Lenis({
       lerp: this.scrollLerp,
-      // syncTouch: true,
-      // syncTouchLerp: 0.075,
+      syncTouch: true,
+      syncTouchLerp: this.scrollLerp,
     })
     this.update()
   }
@@ -60,10 +61,10 @@ export default class Page {
   createAnimations() {
     this.animations = []
 
-    // this.animationTitles = map(this.elements.title, (element) => {
-    //   return new Title({ element })
-    // })
-    // this.animations.push([...this.animationTitles])
+    this.animationTitles = map(this.elements.title, (element) => {
+      return new Title({ element })
+    })
+    this.animations.push([...this.animationTitles])
 
     this.animationDescription = map(this.elements.description, (element) => {
       return new Description({ element })
