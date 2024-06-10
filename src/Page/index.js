@@ -58,10 +58,10 @@ export default class Page {
   createAnimations() {
     this.animations = []
 
-    this.animationTitles = map(this.elements.title, (element) => {
-      return new Title({ element })
-    })
-    this.animations.push([...this.animationTitles])
+    // this.animationTitles = map(this.elements.title, (element) => {
+    //   return new Title({ element })
+    // })
+    // this.animations.push([...this.animationTitles])
 
     this.animationDescription = map(this.elements.description, (element) => {
       return new Description({ element })
