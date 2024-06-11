@@ -19,11 +19,6 @@ export default class Page {
     }
     this.scrollLerp = 0.075
     this.createSmoothScroll()
-    // if (window.innerWidth > 768) {
-
-    // } else {
-    //   this.scrollLerp = 1
-    // }
   }
 
   create() {
@@ -48,7 +43,7 @@ export default class Page {
     this.lenis = new Lenis({
       lerp: this.scrollLerp,
       syncTouch: true,
-      syncTouchLerp: this.scrollLerp,
+      syncTouchLerp: this.scrollLerp * 0.75,
     })
     this.update()
   }
