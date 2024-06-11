@@ -58,6 +58,6 @@ export default class Description extends Animation {
   animateOut() {}
 
   onResize() {
-    this.create()
+    // this.create()
   }
 }

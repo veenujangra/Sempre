@@ -13,4 +13,12 @@ export default defineConfig({
       },
     },
   },
+  server: {
+    https: {
+      key: 'localhost-key.pem',
+      cert: 'localhost.pem',
+    },
+    host: 'localhost',
+    port: 3000, // You can change the port if needed
+  },
 })

@@ -20,8 +20,8 @@ export default class Page {
     this.scrollLerp = 1
     if (window.innerWidth > 768) {
       this.scrollLerp = 0.1
+      this.createSmoothScroll()
     }
-    this.createSmoothScroll()
   }
 
   create() {

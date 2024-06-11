@@ -14,6 +14,8 @@ export default class Title extends Animation {
       duration: this.element.getAttribute('data-duration') || 0.4,
     }
 
+    this.interval = 0
+
     this.create()
     this.setProperties()
   }
@@ -66,6 +68,6 @@ export default class Title extends Animation {
   animateOut() {}
 
   onResize() {
-    this.create()
+    // this.create()
   }
 }
