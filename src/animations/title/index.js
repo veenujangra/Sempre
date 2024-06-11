@@ -51,7 +51,7 @@ export default class Title extends Animation {
       this.text.lines,
       // {
       //   autoAlpha: 0,
-      //   y: 20,
+      //   y: '120%',
       // },
       {
         autoAlpha: 1,
@@ -66,6 +66,6 @@ export default class Title extends Animation {
   animateOut() {}
 
   onResize() {
-    // this.create()
+    this.create()
   }
 }

@@ -26,7 +26,8 @@ class App {
         content: '.about_hero_media_content',
       })
       // create product pages
-    } else if (window.location.pathname.indexOf('products')) {
+    } else if (window.location.pathname.indexOf('products') > 0) {
+      console.log('Enter product page', window.location.pathname.indexOf('products'))
       this.about = new Product({
         media: '.product_hero_media',
       })

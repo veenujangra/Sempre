@@ -18,8 +18,8 @@ export default class Page {
       accordion: '[data-accordion = wrapper]',
     }
     this.scrollLerp = 0.1
+    this.createSmoothScroll()
     if (window.innerWidth > 768) {
-      this.createSmoothScroll()
     }
   }
 
