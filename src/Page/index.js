@@ -17,7 +17,7 @@ export default class Page {
       image: '[da = i]',
       accordion: '[data-accordion = wrapper]',
     }
-    this.scrollLerp = 0.075
+    this.scrollLerp = 0.1
     this.createSmoothScroll()
   }
 
