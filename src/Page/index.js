@@ -17,10 +17,11 @@ export default class Page {
       image: '[da = i]',
       accordion: '[data-accordion = wrapper]',
     }
-    this.scrollLerp = 0.1
-    this.createSmoothScroll()
+    this.scrollLerp = 1
     if (window.innerWidth > 768) {
+      this.scrollLerp = 0.1
     }
+    this.createSmoothScroll()
   }
 
   create() {
