@@ -66,6 +66,6 @@ export default class Title extends Animation {
   animateOut() {}
 
   onResize() {
-    this.create()
+    // this.create()
   }
 }
