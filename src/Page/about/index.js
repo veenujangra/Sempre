@@ -14,7 +14,7 @@ export default class About {
 
     ScrollTrigger.create({
       trigger: this.media,
-      start: 'top top',
+      start: 'top 20%',
       end: 'top 20%',
       onEnter: () => {
         this.media.classList.add('is--scrolled')
