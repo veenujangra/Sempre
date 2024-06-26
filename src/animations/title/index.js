@@ -33,6 +33,14 @@ export default class Title extends Animation {
   }
 
   setProperties() {
+    if (window.innerWidth < 991) {
+      this.text.revert()
+      gsap.set(this.element, {
+        autoAlpha: 0,
+        y: '2rem',
+      })
+      return
+    }
     gsap.set(this.text.lines, {
       autoAlpha: 0,
       y: '120%',
@@ -41,6 +49,11 @@ export default class Title extends Animation {
 
   animateIn() {
     if (this.element.classList.contains('visible')) return
+
+    if (window.innerWidth < 991) {
+      this.animateInMobile()
+      return
+    }
 
     this.tl = gsap.timeline({
       delay: this.animationOptions.delay,
@@ -63,6 +76,23 @@ export default class Title extends Animation {
         duration: this.animationOptions.duration,
       }
     )
+  }
+
+  animateInMobile() {
+    this.tl = gsap.timeline({
+      delay: this.animationOptions.delay,
+      onComplete: () => {
+        this.element.classList.add('visible')
+      },
+    })
+
+    this.tl.to(this.element, {
+      autoAlpha: 1,
+      y: '0rem',
+      ease: this.animationOptions.ease,
+      // stagger: this.animationOptions.stagger,
+      duration: this.animationOptions.duration,
+    })
   }
 
   animateOut() {}

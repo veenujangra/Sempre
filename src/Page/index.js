@@ -6,6 +6,7 @@ import SlideUp from '../animations/slideup'
 import Accordion from '../animations/accordion'
 import gsap from 'gsap'
 import Lenis from '@studio-freight/lenis'
+import Navigation from './navigation'
 
 export default class Page {
   constructor(options) {
@@ -45,10 +46,15 @@ export default class Page {
   createSmoothScroll() {
     this.lenis = new Lenis({
       lerp: this.scrollLerp,
-      // syncTouch: true,
-      // syncTouchLerp: this.scrollLerp * 0.75,
     })
     this.update()
+
+    this.nav = new Navigation({
+      element: '.navbar',
+      modalTrigger: '[data-nav-product-modal]',
+      modalClose: '.nav_dd_close',
+      lenis: this.lenis,
+    })
   }
 
   update(time) {
@@ -99,7 +105,7 @@ export default class Page {
           },
           {
             autoAlpha: 1,
-            duration: 1.2,
+            duration: 0.76,
             ease: 'Power1.easeIn',
           }
         )
@@ -136,4 +142,6 @@ export default class Page {
   }
 
   onResize() {}
+  handleClick() {}
+  modalClose() {}
 }

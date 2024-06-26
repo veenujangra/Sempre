@@ -46,7 +46,7 @@ export default class Description extends Animation {
       scrollTrigger: {
         trigger: this.element,
         start: 'top 80%',
-        end: 'top 20%',
+        end: 'center center',
         scrub: 1,
         // markers: 1,
       },
