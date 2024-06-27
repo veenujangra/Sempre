@@ -45,8 +45,8 @@ export default class Description extends Animation {
     this.tl.from(this.text.chars, {
       scrollTrigger: {
         trigger: this.element,
-        start: 'top 80%',
-        end: 'center center',
+        start: 'top bottom',
+        end: 'top center',
         scrub: 1,
         // markers: 1,
       },
