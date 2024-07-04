@@ -124,14 +124,12 @@ export default class Page {
   onScroll() {
     const html = document.documentElement
     if (this.lenis) {
-      console.log('hi')
       if (Math.round(this.lenis.progress * 100) > 0 && !html.classList.contains('scrolled')) {
         html.classList.add('scrolled')
       } else if (Math.round(this.lenis.progress * 100) === 0 && html.classList.contains('scrolled')) {
         html.classList.remove('scrolled')
       }
       if (this.lenis.direction === -1) {
-        console.log('hi')
         html.classList.add('scroll-up')
         html.classList.remove('scroll-down')
       } else if (this.lenis.direction === 1) {
