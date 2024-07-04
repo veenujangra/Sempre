@@ -129,14 +129,12 @@ export default class Page {
       } else if (Math.round(this.lenis.progress * 100) === 0 && html.classList.contains('scrolled')) {
         html.classList.remove('scrolled')
       }
-      if (window.innerWidth > 768) {
-        if (this.lenis.direction === -1) {
-          html.classList.add('scroll-up')
-          html.classList.remove('scroll-down')
-        } else if (this.lenis.direction === 1) {
-          html.classList.remove('scroll-up')
-          html.classList.add('scroll-down')
-        }
+      if (this.lenis.direction === -1) {
+        html.classList.add('scroll-up')
+        html.classList.remove('scroll-down')
+      } else if (this.lenis.direction === 1) {
+        html.classList.remove('scroll-up')
+        html.classList.add('scroll-down')
       }
     }
   }
